@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_above="@id/navigationPanel">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/profilePhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="128dp"
+                    android:maxWidth="128dp"
+                    android:minHeight="128dp"
+                    android:minWidth="128dp"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/small_dp"
+                    android:src="@drawable/default_photo"/>
+
+                <include layout="@layout/id_fragment"/>
+
+                <include layout="@layout/change_name_fragment"/>
+
+                <include layout="@layout/change_password_fragment"/>
+
+                <include layout="@layout/change_theme_fragment"/>
+
+                <Button
+                    android:id="@+id/btnChangeUser"
+                    style="@style/MediumButtonCenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="280dp"
+                    android:minWidth="280dp"
+                    android:text="@string/changeUserBtnText"
+                    android:layout_margin="@dimen/small_dp"
+                    android:paddingHorizontal="@dimen/small_dp"
+                    android:layout_gravity="center_horizontal"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/navigationPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal|bottom"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue">
+
+        <ImageView
+            android:id="@+id/ivFriends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/friend_ico_white"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_ico_white"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/ivSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/settings_ico_white"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+</RelativeLayout>

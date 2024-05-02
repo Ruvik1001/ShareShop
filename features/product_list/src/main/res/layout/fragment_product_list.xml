@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ProductListFragment">
+
+    <LinearLayout
+        android:id="@+id/llListNameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/small_dp"
+    >
+
+        <TextView
+            android:id="@+id/tvListName"
+            style="@style/LargeText"
+            android:layout_weight="80"
+            android:layout_width="0dp"
+            android:maxLength="50"
+            android:layout_margin="@dimen/small_dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/btnEditListName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/edit_ico_black"
+            android:layout_marginHorizontal="@dimen/small_dp"
+            android:layout_marginTop="@dimen/medium_dp"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/llListNameContainer"
+        android:layout_above="@id/btnEditShared"
+        android:padding="@dimen/small_dp"/>
+
+    <Button
+        android:id="@+id/btnEditShared"
+        android:layout_width="wrap_content"
+        style="@style/MediumButtonCenter"
+        android:layout_margin="@dimen/small_dp"
+        android:padding="@dimen/small_dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/listSharedSettingsText"
+        android:minWidth="300dp"
+        android:maxWidth="300dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ownerTitleText">Владелец:</string>
+    <string name="friendsTitleText">Участники:</string>
+    <string name="listAddShare">Добавить участников</string>
+</resources>

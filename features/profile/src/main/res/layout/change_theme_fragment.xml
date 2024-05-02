@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+    <Button
+        android:id="@+id/btnLight"
+        style="@style/MediumButtonCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="150dp"
+        android:minWidth="130dp"
+        android:text="@string/lightModeButtonText"
+        android:background="@drawable/rounder_button_white_with_bounds"
+        android:layout_margin="@dimen/small_dp"
+        android:paddingHorizontal="@dimen/small_dp"
+        />
+
+    <Button
+        android:id="@+id/btnDark"
+        style="@style/MediumButtonCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="150dp"
+        android:minWidth="130dp"
+        android:layout_toEndOf="@id/btnLight"
+        android:text="@string/darkModeButtonText"
+        android:textColor="@color/white"
+        android:background="@drawable/rounder_button_black_with_bounds"
+        android:layout_margin="@dimen/small_dp"
+        android:paddingHorizontal="@dimen/small_dp"
+        />
+
+</RelativeLayout>

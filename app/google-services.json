@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "850603352870",
+    "project_id": "share-shop-5942c",
+    "storage_bucket": "share-shop-5942c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850603352870:android:ed4d964e3c3f1edd4fd7e7",
+        "android_client_info": {
+          "package_name": "com.grishina.shareshop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7O5SYPZhjQnnuHPQGIOo0B3W-g2v063c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

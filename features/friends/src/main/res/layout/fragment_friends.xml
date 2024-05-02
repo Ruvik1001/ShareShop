@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".FriendsFragment">
+
+    <LinearLayout
+        android:id="@+id/searchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/small_dp">
+
+        <EditText
+            android:id="@+id/etFriendId"
+            style="@style/MediumEditText"
+            android:layout_width="0dp"
+            android:maxWidth="350dp"
+            android:minWidth="280dp"
+            android:layout_weight="80"
+            android:paddingHorizontal="@dimen/small_dp"
+            android:layout_marginTop="@dimen/small_dp"
+            android:hint="@string/editSearchFriendText"
+            android:inputType="number"
+            android:maxLength="16"/>
+
+        <ImageButton
+            android:id="@+id/ibClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/clear_ico_black"
+            android:layout_marginTop="@dimen/small_dp"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/ibSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search_ico_black"
+            android:layout_marginTop="@dimen/small_dp"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItems"
+        android:padding="@dimen/small_dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchContainer"
+        android:layout_above="@id/navigationPanel"/>
+
+    <LinearLayout
+        android:id="@+id/navigationPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal|bottom"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue">
+
+        <ImageView
+            android:id="@+id/ivFriends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/friend_ico_white"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_ico_white"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/ivSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/settings_ico_white"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+</RelativeLayout>

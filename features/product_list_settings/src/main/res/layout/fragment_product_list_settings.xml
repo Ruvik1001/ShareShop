@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ProductListSettingsFragment">
+
+    <LinearLayout
+        android:id="@+id/settingsTitleContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/large_dp">
+
+        <include layout="@layout/owner_fragment"/>
+
+        <TextView
+            style="@style/MediumText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_dp"
+            android:text="@string/friendsTitleText"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItems"
+        android:padding="@dimen/small_dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/settingsTitleContainer"
+        android:layout_above="@id/btnAddShare"/>
+
+    <Button
+        android:id="@+id/btnAddShare"
+        android:layout_width="wrap_content"
+        style="@style/MediumButtonCenter"
+        android:layout_margin="@dimen/small_dp"
+        android:padding="@dimen/small_dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/listAddShare"
+        android:minWidth="300dp"
+        android:maxWidth="300dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".SignInFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etLogin"
+                style="@style/MediumEditTextCenter"
+                android:hint="@string/emailHint"
+                android:background="@drawable/rounder_edit_with_border"
+                android:layout_margin="@dimen/small_dp"
+                android:layout_width="wrap_content"
+                android:paddingHorizontal="@dimen/small_dp"
+                android:minWidth="300dp"
+                android:maxWidth="300dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <EditText
+                android:id="@+id/etPassword"
+                style="@style/MediumEditTextCenter"
+                android:hint="@string/passwordHint"
+                android:background="@drawable/rounder_edit_with_border"
+                android:layout_margin="@dimen/small_dp"
+                android:inputType="textPassword"
+                android:layout_width="wrap_content"
+                android:paddingHorizontal="@dimen/small_dp"
+                android:minWidth="300dp"
+                android:maxWidth="300dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <Button
+                android:id="@+id/btnSignIn"
+                style="@style/MediumButtonCenter"
+                android:text="@string/loginButtonText"
+                android:layout_margin="@dimen/small_dp"
+                android:layout_width="wrap_content"
+                android:paddingHorizontal="@dimen/small_dp"
+                android:minWidth="300dp"
+                android:maxWidth="300dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <Button
+                android:id="@+id/btnSignUp"
+                style="@style/MediumButtonCenter"
+                android:text="@string/signUpButtonText"
+                android:layout_margin="@dimen/small_dp"
+                android:layout_width="wrap_content"
+                android:paddingHorizontal="@dimen/small_dp"
+                android:minWidth="300dp"
+                android:maxWidth="300dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <Button
+                android:id="@+id/btnForgotPassword"
+                style="@style/MediumButtonCenter"
+                android:text="@string/forgotPasswordButtonText"
+                android:background="@drawable/rounder_button_25_percent"
+                android:textColor="@color/hint"
+                android:layout_margin="@dimen/small_dp"
+                android:layout_width="wrap_content"
+                android:paddingHorizontal="@dimen/small_dp"
+                android:minWidth="300dp"
+                android:maxWidth="300dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

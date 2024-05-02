@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="changePasswordText">Новый пароль</string>
+    <string name="lightModeButtonText">Светлая</string>
+    <string name="darkModeButtonText">Тёмная</string>
+    <string name="changeUserBtnText">Сменить пользователя</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="emailHint">Email</string>
+    <string name="nameHint">Имя</string>
+    <string name="passwordHint">Пароль</string>
+    <string name="passwordConfirmHint">Повторите пароль</string>
+    <string name="btnSignUp">Зарегистрироваться</string>
+</resources>

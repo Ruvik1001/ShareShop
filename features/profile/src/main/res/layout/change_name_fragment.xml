@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/nameFragment"
+        style="@style/MediumTextCenter"
+        android:background="@color/edit_background"
+        android:layout_margin="@dimen/small_dp"
+        android:layout_width="wrap_content"
+        android:maxWidth="250dp"
+        android:minWidth="250dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/btnEditName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/edit_ico_black"
+        android:layout_toEndOf="@id/nameFragment"
+        android:layout_marginTop="@dimen/small_dp"/>
+
+</RelativeLayout>
