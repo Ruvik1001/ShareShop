@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".HomeFragment">
+    tools:context=".presentation.HomeFragment">
 
     <LinearLayout
         android:id="@+id/searchContainer"
@@ -51,6 +51,8 @@
         android:layout_below="@id/searchContainer"
         android:layout_above="@id/navigationPanel"/>
 
+
+
     <LinearLayout
         android:id="@+id/navigationPanel"
         android:layout_width="match_parent"
@@ -60,32 +62,32 @@
         android:layout_alignParentBottom="true"
         android:background="@color/blue">
 
-    <ImageView
-        android:id="@+id/ivFriends"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/friend_ico_white"
-        android:layout_margin="16dp"
-        android:clickable="true"
-        android:focusable="true" />
+        <ImageView
+            android:id="@+id/ivFriends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/friend_ico_white"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true" />
 
-    <ImageView
-        android:id="@+id/ivHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/home_ico_white"
-        android:layout_margin="16dp"
-        android:clickable="true"
-        android:focusable="true" />
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_ico_white"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true" />
 
-    <ImageView
-        android:id="@+id/ivSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/settings_ico_white"
-        android:layout_margin="16dp"
-        android:clickable="true"
-        android:focusable="true" />
+        <ImageView
+            android:id="@+id/ivSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/settings_ico_white"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true" />
 
     </LinearLayout>
 

@@ -4,7 +4,7 @@ import com.grishina.domain.data.ListItem
 import com.grishina.domain.share.ShareRepository
 
 class UpdateProductListItemsUseCase(private val shareRepository: ShareRepository) {
-    suspend fun execute(ownerToken: String, title: String, items: List<ListItem>): Boolean {
-        return shareRepository.updateProductListItems(ownerToken, title, items)
+    suspend fun execute(listToken: String, items: List<ListItem>, successCallback: (Boolean)->Unit) {
+        return shareRepository.updateProductListItems(listToken, items, successCallback)
     }
 }

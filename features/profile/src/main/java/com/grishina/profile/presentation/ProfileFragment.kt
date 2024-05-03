@@ -1,27 +1,26 @@
-package com.grishina.sign_in
+package com.grishina.profile.presentation
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.grishina.profile.R
 import org.koin.android.ext.android.inject
 
-class SignInFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
     companion object {
-        fun newInstance() = SignInFragment()
+        fun newInstance() = ProfileFragment()
     }
 
-    private val viewModel by inject<SignInViewModel>()
+    private val viewModel by inject<ProfileViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return inflater.inflate(R.layout.fragment_sign_in, container, false)
+        return inflater.inflate(R.layout.fragment_profile, container, false)
     }
-
 
 }

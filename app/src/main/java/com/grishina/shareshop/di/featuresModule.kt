@@ -1,12 +1,12 @@
 package com.grishina.shareshop.di
 
-import com.grishina.friends.FriendsViewModel
-import com.grishina.home.HomeViewModel
-import com.grishina.product_list.ProductListViewModel
+import com.grishina.friends.presentation.FriendsViewModel
+import com.grishina.home.presentation.HomeViewModel
+import com.grishina.product_list.preentation.ProductListViewModel
 import com.grishina.product_list_settings.ProductListSettingsViewModel
-import com.grishina.profile.ProfileViewModel
+import com.grishina.profile.presentation.ProfileViewModel
 import com.grishina.reset_password.ResetPasswordViewModel
-import com.grishina.sign_in.SignInViewModel
+import com.grishina.sign_in.presentation.SignInViewModel
 import com.grishina.sign_up.SignUpViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

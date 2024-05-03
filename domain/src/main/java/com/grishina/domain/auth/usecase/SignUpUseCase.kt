@@ -6,9 +6,9 @@ import kotlinx.coroutines.tasks.await
 
 class SignUpUseCase(private val authRepository: AuthRepository) {
 
-    suspend fun execute(userAuthData: User): Boolean {
+    suspend fun execute(user: User): Boolean {
         return try {
-            val task = authRepository.signUp(userAuthData)
+            val task = authRepository.signUp(user)
             task.await()
             true
         } catch (e: Exception) {

@@ -5,12 +5,12 @@ import com.grishina.domain.data.User
 import kotlinx.coroutines.tasks.await
 
 class SignInUseCase(private val authRepository: AuthRepository) {
-    suspend fun execute(userAuthData: User): User? {
+    suspend fun execute(user: User): User? {
         return try {
-            val task = authRepository.signIn(userAuthData)
+            val task = authRepository.signIn(user)
             task.await()
             User(
-                login = userAuthData.login,
+                login = user.login,
                 password = ""
             )
         } catch (e: Exception) {

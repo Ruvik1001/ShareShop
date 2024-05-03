@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Share Shop</string>
+    <string name="LIST_TOKEN_KEY_FROM_HOME">LIST_TOKEN_KEY_FROM_HOME</string>
+    <string name="LIST_TOKEN_KEY_FROM_PRODUCT_LIST">LIST_TOKEN_KEY_FROM_PRODUCT_LIST</string>
 </resources>

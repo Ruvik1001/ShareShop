@@ -18,9 +18,9 @@ data class FriendRequest(
         requestToken = generateToken(fromToken)
     }
 
-    private fun generateToken(login: String): String {
-        val bytes = MessageDigest.getInstance("SHA-256").digest(login.toByteArray())
-        return bytes.joinToString("") { "%02x".format(it) }.substring(0, 16)
+    private fun generateToken(seed: String): String {
+        val bytes = MessageDigest.getInstance("SHA-256").digest(seed.toByteArray())
+        return bytes.joinToString("") { "%02x".format(it) }
     }
 
 }

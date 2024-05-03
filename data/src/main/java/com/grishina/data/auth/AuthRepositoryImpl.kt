@@ -3,6 +3,7 @@ package com.grishina.data.auth
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.SignInMethodQueryResult
 import com.grishina.domain.auth.AuthRepository
 import com.grishina.domain.data.User
@@ -36,6 +37,14 @@ class AuthRepositoryImpl: AuthRepository {
         val deleteTask = firebaseAuth.currentUser?.delete()
         deleteTask?.await()
         return auth.createUserWithEmailAndPassword(login, password)
+    }
+
+    override fun signOut() {
+        firebaseAuth.signOut()
+    }
+
+    override fun getUser(): FirebaseUser? {
+        return firebaseAuth.currentUser
     }
 
 }

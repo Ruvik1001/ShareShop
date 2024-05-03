@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.grishina.home.HomeFragment"
+        android:name="com.grishina.home.presentation.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
@@ -22,16 +22,19 @@
     </fragment>
     <fragment
         android:id="@+id/friendsFragment"
-        android:name="com.grishina.friends.FriendsFragment"
+        android:name="com.grishina.friends.presentation.FriendsFragment"
         android:label="FriendsFragment"
         tools:layout="@layout/fragment_friends">
         <action
             android:id="@+id/action_friendsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_friendsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/productListFragment"
-        android:name="com.grishina.product_list.ProductListFragment"
+        android:name="com.grishina.product_list.preentation.ProductListFragment"
         android:label="ProductListFragment"
         tools:layout="@layout/fragment_product_list">
         <action
@@ -45,7 +48,7 @@
         tools:layout="@layout/fragment_product_list_settings"/>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.grishina.profile.ProfileFragment"
+        android:name="com.grishina.profile.presentation.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
         <action
@@ -54,6 +57,9 @@
         <action
             android:id="@+id/action_profileFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_friendsFragment"
+            app:destination="@id/friendsFragment" />
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"
@@ -62,7 +68,7 @@
         tools:layout="@layout/fragment_reset_password"/>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.grishina.sign_in.SignInFragment"
+        android:name="com.grishina.sign_in.presentation.SignInFragment"
         android:label="SignInFragment"
         tools:layout="@layout/fragment_sign_in">
         <action

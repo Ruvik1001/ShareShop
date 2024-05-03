@@ -5,4 +5,5 @@
     <string name="passwordHint">Пароль</string>
     <string name="passwordConfirmHint">Повторите пароль</string>
     <string name="btnSignUp">Зарегистрироваться</string>
+    <string name="mailPattern">[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}</string>
 </resources>

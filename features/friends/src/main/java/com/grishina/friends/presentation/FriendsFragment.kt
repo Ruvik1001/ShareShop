@@ -1,11 +1,11 @@
-package com.grishina.friends
+package com.grishina.friends.presentation
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.grishina.friends.R
 import org.koin.android.ext.android.inject
 
 class FriendsFragment : Fragment() {

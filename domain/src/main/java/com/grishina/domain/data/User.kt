@@ -6,10 +6,10 @@ data class User(
     var login: String = "",
     var password: String = "",
     var name: String = "",
-    var friendsTokens: List<String> = listOf(),
     var userToken: String = "",
 ) {
     init {
+        login = login.replace(".", "_")
         userToken = generateToken(login)
     }
 

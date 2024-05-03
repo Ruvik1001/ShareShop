@@ -2,6 +2,7 @@ package com.grishina.domain.auth
 
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.SignInMethodQueryResult
 import com.grishina.domain.data.User
 
@@ -17,4 +18,7 @@ interface AuthRepository {
 
     suspend fun setNewPassword(password: String): Task<AuthResult>
 
+    fun signOut()
+
+    fun getUser(): FirebaseUser?
 }
