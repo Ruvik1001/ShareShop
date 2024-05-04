@@ -23,7 +23,6 @@ class AdapterProductListRouter(
             )
         }
         navController?.navigate(R.id.action_productListFragment_to_productListSettingsFragment, bundle)
-        navController?.popBackStack(R.id.productListSettingsFragment, false)
     }
 
 }

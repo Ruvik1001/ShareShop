@@ -3,6 +3,7 @@ package com.grishina.shareshop.glue
 import android.content.Context
 import android.os.Bundle
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import com.grishina.home.HomeRouter
 import com.grishina.shareshop.R
 
@@ -16,13 +17,17 @@ class AdapterHomeRouter(
     }
 
     override fun goToFriend() {
-        navController?.navigate(R.id.action_homeFragment_to_friendsFragment)
-        navController?.popBackStack(R.id.friendsFragment, false)
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.homeFragment, true)
+            .build()
+        navController?.navigate(R.id.action_homeFragment_to_friendsFragment, null, navOptions)
     }
 
     override fun goToProfile() {
-        navController?.navigate(R.id.action_homeFragment_to_profileFragment)
-        navController?.popBackStack(R.id.profileFragment, false)
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.homeFragment, true)
+            .build()
+        navController?.navigate(R.id.action_homeFragment_to_profileFragment, null, navOptions)
     }
 
     override fun goToProductList(listToken: String) {
@@ -33,7 +38,6 @@ class AdapterHomeRouter(
             )
         }
         navController?.navigate(R.id.action_homeFragment_to_productListFragment, bundle)
-        navController?.popBackStack(R.id.productListFragment, false)
     }
 
 }

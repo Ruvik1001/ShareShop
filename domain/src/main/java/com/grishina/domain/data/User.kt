@@ -9,7 +9,6 @@ data class User(
     var userToken: String = "",
 ) {
     init {
-        login = login.replace(".", "_")
         userToken = generateToken(login)
     }
 

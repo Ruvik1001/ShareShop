@@ -45,6 +45,7 @@ dependencies {
     implementation(libs.bundles.coroutines)
     implementation(libs.bundles.lifecycle)
     implementation(libs.bundles.koin)
+    implementation(libs.bundles.firebase)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.junit.ext)

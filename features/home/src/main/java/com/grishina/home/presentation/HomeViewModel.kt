@@ -3,14 +3,9 @@ package com.grishina.home.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.grishina.domain.auth.usecase.SetNewPasswordUseCase
-import com.grishina.domain.auth.usecase.SignOutUseCase
 import com.grishina.domain.data.ProductList
-import com.grishina.domain.share.usecase.CreateProductListUseCase
 import com.grishina.domain.share.usecase.DeleteProductListUseCase
-import com.grishina.domain.share.usecase.LoadProductListUseCase
 import com.grishina.domain.share.usecase.LoadProductListsUseCase
-import com.grishina.domain.share.usecase.UpdateNameUseCase
 import com.grishina.domain.share.usecase.UpdateProductListNameUseCase
 import com.grishina.home.HomeRouter
 import kotlinx.coroutines.CoroutineScope
@@ -51,7 +46,7 @@ class HomeViewModel(
     }
 
 
-    fun lunchFriend() {
+    fun lunchFriends() {
         homeRouter.goToFriend()
     }
 

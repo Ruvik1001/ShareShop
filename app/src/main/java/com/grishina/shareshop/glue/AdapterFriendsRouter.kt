@@ -1,6 +1,7 @@
 package com.grishina.shareshop.glue
 
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import com.grishina.friends.FriendsRouter
 import com.grishina.shareshop.R
 
@@ -13,12 +14,16 @@ class AdapterFriendsRouter(
     }
 
     override fun goToHome() {
-        navController?.navigate(R.id.action_friendsFragment_to_homeFragment)
-        navController?.popBackStack(R.id.homeFragment, false)
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.friendsFragment, true)
+            .build()
+        navController?.navigate(R.id.action_friendsFragment_to_homeFragment, null, navOptions)
     }
 
     override fun goToProfile() {
-        navController?.navigate(R.id.action_friendsFragment_to_profileFragment)
-        navController?.popBackStack(R.id.profileFragment, false)
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.friendsFragment, true)
+            .build()
+        navController?.navigate(R.id.action_friendsFragment_to_profileFragment, null, navOptions)
     }
 }

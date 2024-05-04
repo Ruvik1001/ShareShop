@@ -5,4 +5,9 @@
     <string name="loginButtonText">Войти</string>
     <string name="signUpButtonText">Зарегистрироваться</string>
     <string name="forgotPasswordButtonText">Забыли пароль?</string>
+    <string name="wrongSignInText">Неверный логин или пароль</string>
+    <string name="signInTitle">Вход</string>
+    <string name="confirmButtonText">Продолжить</string>
+    <string name="wrongLoginFormatText">Неверный фоормат логина</string>
+    <string name="wrongPasswordFormatText">Пароль не может быть пустым</string>
 </resources>

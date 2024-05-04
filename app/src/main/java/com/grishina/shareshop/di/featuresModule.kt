@@ -8,41 +8,80 @@ import com.grishina.profile.presentation.ProfileViewModel
 import com.grishina.reset_password.ResetPasswordViewModel
 import com.grishina.sign_in.presentation.SignInViewModel
 import com.grishina.sign_up.SignUpViewModel
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val featuresModule = module {
 
     viewModel<FriendsViewModel> {
-        FriendsViewModel()
+        FriendsViewModel(
+            friendsRouter = get(),
+            getUserUseCase = get(),
+            removeFriendUseCase = get(),
+            loadFriendsNameUseCase = get(),
+            sendFriendRequestUseCase = get(),
+            loadFriendRequestsUseCase = get(),
+            refuseFriendRequestUseCase = get(),
+            acceptFriendRequestUseCase = get(),
+        )
     }
 
     viewModel<HomeViewModel> {
-        HomeViewModel()
+        HomeViewModel(
+            homeRouter = get(),
+            loadProductListsUseCase = get(),
+            deleteProductListUseCase = get(),
+            updateProductListNameUseCase = get()
+        )
     }
 
     viewModel<ProductListViewModel> {
-        ProductListViewModel()
+        ProductListViewModel(
+            productListRouter = get(),
+            loadProductListUseCase = get(),
+            updateProductListItemsUseCase = get(),
+            updateProductListItemStatusUseCase = get(),
+        )
     }
 
     viewModel<ProductListSettingsViewModel> {
-        ProductListSettingsViewModel()
+        ProductListSettingsViewModel(
+            addFriendToListUseCase = get(),
+            loadProductListUseCase = get(),
+            loadFriendsNameUseCase = get(),
+            removeFriendFromListUseCase = get()
+        )
     }
 
     viewModel<ProfileViewModel> {
-        ProfileViewModel()
+        ProfileViewModel(
+            profileRouter = get(),
+            signOutUseCase = get(),
+            updateNameUseCase = get(),
+            setNewPasswordUseCase = get(),
+        )
     }
 
     viewModel<ResetPasswordViewModel> {
-        ResetPasswordViewModel()
+        ResetPasswordViewModel(
+            resetPasswordUseCase = get()
+        )
     }
 
     viewModel<SignInViewModel> {
-        SignInViewModel()
+        SignInViewModel(
+            signInRouter = get(),
+            signInUseCase = get(),
+            getUserUseCase = get()
+        )
     }
 
     viewModel<SignUpViewModel> {
-        SignUpViewModel()
+        SignUpViewModel(
+            signUpUseCase = get(),
+            registerInRTDBUseCase = get()
+        )
     }
 
 

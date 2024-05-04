@@ -7,35 +7,36 @@ import com.grishina.domain.data.User
 import com.grishina.domain.share.usecase.RegisterInRTDBUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class SignUpViewModel(
-    private val context: Context,
     private val signUpUseCase: SignUpUseCase,
     private val registerInRTDBUseCase: RegisterInRTDBUseCase
 ) : ViewModel() {
 
-    fun signUp(
+    fun signUpInAuth(
         user: User,
-        callback: (Boolean, Boolean)->Unit
+        callback: (Boolean)->Unit
     ) {
         CoroutineScope(Dispatchers.IO).launch {
-            if (!signUpUseCase.execute(User(login = user.login, password = user.password))) {
-                callback(false, false)
-                return@launch
-            }
-            registerInRTDBUseCase.execute(User(login = user.login, name = user.name)) {
-                callback(true, it)
-            }
+            val result = signUpUseCase.execute(User(login = user.login, password = user.password))
+            withContext(Dispatchers.Main) { callback(result) }
         }
     }
 
-    fun validateMailPattern(login: String): Boolean {
-        val emailPattern = context.getString(R.string.mailPattern).toRegex()
-        return emailPattern.matches(login)
-    }
-
-    fun validatePasswordPattern(password: String): Boolean {
-        return password.length >= 6
+    fun signUpInRTDB(
+        user: User,
+        callback: (Boolean)->Unit
+    ) {
+        CoroutineScope(Dispatchers.IO).launch {
+            registerInRTDBUseCase.execute(User(login = user.login, name = user.name)) {
+                CoroutineScope(Dispatchers.Main).launch {
+                    callback(it)
+                }
+            }
+        }
     }
 }
