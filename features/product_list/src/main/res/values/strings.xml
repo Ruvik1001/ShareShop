@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="listSharedSettingsText">Участники списка</string>
+    <string name="accessErrorTitle">Нарушение доступа</string>
+    <string name="accessErrorText">Может управлять только владелец!</string>
+    <string name="close">Отмена</string>
+    <string name="rename">Переименовать</string>
+    <string name="cantRename">Не удалось переименовать</string>
+    <string name="editListNameHint">Введите новое имя</string>
+    <string name="editListNameTitle">Изменение названия листа</string>
+    <string name="badRename">Не удалось переименовать</string>
+    <string name="successRename">Имя успешно изменено</string>
+    <string name="productEditTitle">Название продукта</string>
+    <string name="ProductEditHint">Введите новое название</string>
 </resources>

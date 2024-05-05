@@ -3,4 +3,6 @@
     <string name="ownerTitleText">Владелец:</string>
     <string name="friendsTitleText">Участники:</string>
     <string name="listAddShare">Добавить участников</string>
+    <string name="accessErrorTitle">Ошибка доступа</string>
+    <string name="accessErrorText">Только владелец может управлять пользователями!</string>
 </resources>

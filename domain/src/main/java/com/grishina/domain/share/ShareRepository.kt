@@ -31,8 +31,11 @@ interface ShareRepository {
     suspend fun loadProductLists(myToken: String, callback: (Boolean, List<ProductList>?)->Unit)
     suspend fun loadProductList(listToken: String, callback: (ProductList?) -> Unit)
 
+    suspend fun observeListChanges(listToken: String, callback: (ProductList?) -> Unit)
+
     suspend fun authInRTDB(user: User, callback: (Boolean, User?)->Unit)
     suspend fun registerInRTDB(user: User, callback: (Boolean)->Unit)
     suspend fun updateName(userToken: String, name: String, callback: (Boolean) -> Unit)
+    suspend fun getUserByToken(userToken: String, callback: (User?) -> Unit)
 
 }

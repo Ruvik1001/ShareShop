@@ -11,10 +11,12 @@ import com.grishina.domain.share.usecase.AddFriendToListUseCase
 import com.grishina.domain.share.usecase.AuthInRTDBUseCase
 import com.grishina.domain.share.usecase.CreateProductListUseCase
 import com.grishina.domain.share.usecase.DeleteProductListUseCase
+import com.grishina.domain.share.usecase.GetUserByTokenUseCase
 import com.grishina.domain.share.usecase.LoadFriendRequestsUseCase
 import com.grishina.domain.share.usecase.LoadFriendsNameUseCase
 import com.grishina.domain.share.usecase.LoadProductListUseCase
 import com.grishina.domain.share.usecase.LoadProductListsUseCase
+import com.grishina.domain.share.usecase.ObserveListChangesUseCase
 import com.grishina.domain.share.usecase.RefuseFriendRequestUseCase
 import com.grishina.domain.share.usecase.RegisterInRTDBUseCase
 import com.grishina.domain.share.usecase.RemoveFriendFromListUseCase
@@ -121,6 +123,14 @@ val domainModule = module {
 
     factory<UpdateProductListNameUseCase> {
         UpdateProductListNameUseCase(shareRepository = get())
+    }
+
+    factory<ObserveListChangesUseCase> {
+        ObserveListChangesUseCase(shareRepository = get())
+    }
+
+    factory<GetUserByTokenUseCase> {
+        GetUserByTokenUseCase(shareRepository = get())
     }
 
 }

@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.grishina.core.alertValidateAnyFiled
+import com.grishina.core.checkInternet
 import com.grishina.core.hideInputBoard
 import com.grishina.domain.data.FriendRequest
 import com.grishina.friends.adapter.FriendsAdapter
@@ -41,6 +42,7 @@ class FriendsFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         view = inflater.inflate(R.layout.fragment_friends, container, false)
+        checkInternet(requireContext())
 
         etFriendId = view.findViewById(R.id.etFriendId)
         ibClear = view.findViewById(R.id.ibClear)

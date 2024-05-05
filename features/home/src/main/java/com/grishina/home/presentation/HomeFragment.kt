@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.grishina.core.alertValidateAnyFiled
+import com.grishina.core.checkInternet
 import com.grishina.core.hideInputBoard
 import com.grishina.core.isFirebaseAvailable
 import com.grishina.core.isNetworkAvailable
@@ -121,14 +122,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun loadUser() {
-        if (!isNetworkAvailable(requireContext()) || !isFirebaseAvailable(requireContext())) {
-            AlertDialog.Builder(requireContext())
-                .setTitle(getString(com.grishina.core.R.string.networkErrorTitle))
-                .setMessage(com.grishina.core.R.string.networkError)
-                .setPositiveButton(getString(com.grishina.core.R.string.reloadText)) { _, _ -> loadUser() }
-                .setOnDismissListener { loadUser()  }
-                .create().show()
-        }
+        checkInternet(requireContext())
         viewModel.initUser()
     }
 
@@ -198,6 +192,14 @@ class HomeFragment : Fragment() {
                         hint = getString(R.string.changeListNameHint),
                         positiveText = getString(R.string.confirm),
                         actionOnPositive = { newName ->
+                            if (!alertValidateAnyFiled(
+                                context = requireContext(),
+                                value = newName,
+                                reflectFunction = { name ->
+                                    name.isNotBlank() && name.isNotEmpty()
+                                },
+                                badReflectString = getString(R.string.badTitle)
+                            )) return@buildAlert
                             updateListName(currentList.listToken, newName) {
                                 if (it)
                                     Toast.makeText(

@@ -41,7 +41,10 @@ val featuresModule = module {
     viewModel<ProductListViewModel> {
         ProductListViewModel(
             productListRouter = get(),
+            getUserUseCase = get(),
             loadProductListUseCase = get(),
+            observeListChangesUseCase = get(),
+            updateProductListNameUseCase = get(),
             updateProductListItemsUseCase = get(),
             updateProductListItemStatusUseCase = get(),
         )
@@ -49,10 +52,13 @@ val featuresModule = module {
 
     viewModel<ProductListSettingsViewModel> {
         ProductListSettingsViewModel(
+            getUserUseCase = get(),
+            getUserByTokenUseCase = get(),
             addFriendToListUseCase = get(),
             loadProductListUseCase = get(),
             loadFriendsNameUseCase = get(),
-            removeFriendFromListUseCase = get()
+            loadFriendRequestsUseCase = get(),
+            removeFriendFromListUseCase = get(),
         )
     }
 

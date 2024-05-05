@@ -17,6 +17,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import com.grishina.core.alertCheckConnection
+import com.grishina.core.checkInternet
 import com.grishina.core.isFirebaseAvailable
 import com.grishina.core.isNetworkAvailable
 import com.grishina.core.switchTheme
@@ -115,14 +116,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun getUser(callback: (User?)->Unit) {
-        if (!isNetworkAvailable(requireContext()) || !isFirebaseAvailable(requireContext())) {
-            AlertDialog.Builder(requireContext())
-                .setTitle(getString(R.string.networkErrorTitle))
-                .setMessage(com.grishina.core.R.string.networkError)
-                .setPositiveButton(getString(R.string.reloadText)) { _, _ -> getUser { callback(it) } }
-                .setOnDismissListener { getUser { callback(it) }  }
-                .create().show()
-        }
+        checkInternet(requireContext())
         viewModel.getUser(callback)
     }
 

@@ -1,9 +1,11 @@
 package com.grishina.core
 
+import android.app.AlertDialog
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import androidx.core.content.ContextCompat.getString
 import com.google.firebase.FirebaseApp
 
 fun isNetworkAvailable(applicationContext: Context): Boolean {
@@ -53,4 +55,17 @@ fun alertCheckConnection(applicationContext: Context): Boolean {
             badReflectString = applicationContext.getString(R.string.FBError)
         )) return false
     return true
+}
+
+fun checkInternet(applicationContext: Context) {
+    if (!isNetworkAvailable(applicationContext) || !isFirebaseAvailable(applicationContext)) {
+        AlertDialog.Builder(applicationContext)
+            .setTitle(applicationContext.getString(com.grishina.core.R.string.networkErrorTitle))
+            .setMessage(com.grishina.core.R.string.networkError)
+            .setPositiveButton(applicationContext.getString(com.grishina.core.R.string.reloadText)) { _, _ ->
+
+            }
+            .setOnDismissListener { checkInternet(applicationContext)  }
+            .create().show()
+    }
 }

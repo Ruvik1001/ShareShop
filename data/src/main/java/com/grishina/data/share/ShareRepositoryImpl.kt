@@ -524,6 +524,27 @@ class ShareRepositoryImpl: ShareRepository {
         })
     }
 
+    override suspend fun observeListChanges(listToken: String, callback: (ProductList?) -> Unit) {
+        val query = database.reference.child(PRODUCT_REF)
+        query.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (productList in dataSnapshot.children) {
+                    val list = productList.getValue(ProductList::class.java)
+                    if (list != null && list.listToken == listToken) {
+                        callback(list)
+                        return
+                    }
+                }
+                callback(null)
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException())
+                callback(null)
+            }
+        })
+    }
+
     override suspend fun authInRTDB(user: User, callback: (Boolean, User?) -> Unit) {
         val query = database.reference.child(USER_REF)
         query.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -598,6 +619,29 @@ class ShareRepositoryImpl: ShareRepository {
             override fun onCancelled(databaseError: DatabaseError) {
                 Log.e(TAG, "onCancelled", databaseError.toException())
                 callback(false)
+            }
+        })
+    }
+
+    override suspend fun getUserByToken(userToken: String, callback: (User?) -> Unit) {
+        val query = database.reference.child(USER_REF)
+        query.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (users in dataSnapshot.children) {
+                    val userFB = users.getValue(User::class.java)
+                    if (userFB != null) {
+                        if (userFB.userToken == userToken) {
+                            callback(userFB)
+                            return
+                        }
+                    }
+                }
+                callback(null)
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException())
+                callback(null)
             }
         })
     }

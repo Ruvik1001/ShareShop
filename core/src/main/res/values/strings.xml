@@ -5,7 +5,10 @@
     <string name="mailPattern">[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}</string>
     <string name="FBError">Проблемы с подключением к серверу, перезапустите приложение или попробуйте позднее</string>
     <string name="networkError">Проверьте подключение к сети</string>
+    <string name="success">Успех</string>
+    <string name="failure">Неудача</string>
     <string name="OK">Ок</string>
+    <string name="close">Отменить</string>
     <string name="networkErrorTitle">Ошибка подключения</string>
     <string name="reloadText">Перезагрузить</string>
 </resources>

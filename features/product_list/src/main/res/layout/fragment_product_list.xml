@@ -54,4 +54,18 @@
         android:minWidth="300dp"
         android:maxWidth="300dp"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/ibAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnEditShared"
+        android:layout_marginBottom="-30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="@dimen/medium_dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/add_ico_black" />
+
 </RelativeLayout>
