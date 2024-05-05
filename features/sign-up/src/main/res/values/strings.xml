@@ -13,4 +13,6 @@
     <string name="registrationErrorTitle">Ошибка регистрации</string>
     <string name="registrationErrorMessage">Пользователь с данным логином уже зарегистрирован. Если вы забыли пароль от аккаунта, перейдите на страницу восстановления пароля.</string>
     <string name="OK">Ок</string>
+    <string name="suucessRegistrationTitle">Успешная регистрация</string>
+    <string name="suucessRegistrationText">Ваш аккаунт успешно зарегистрирован</string>
 </resources>

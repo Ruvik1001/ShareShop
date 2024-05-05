@@ -59,6 +59,11 @@ class SignUpFragment : Fragment() {
             viewModel.signUpInAuth(user) { authInAuthDBResult ->
                 if (authInAuthDBResult) viewModel.signUpInRTDB(user) { authInRTDB ->
                     if (!authInRTDB) Log.e(TAG, getString(R.string.auth_in_rtdb_return_false))
+                    AlertDialog.Builder(requireContext())
+                        .setTitle(R.string.suucessRegistrationTitle)
+                        .setMessage(R.string.suucessRegistrationText)
+                        .setPositiveButton(R.string.OK) { _, _ -> }
+                        .create().show()
                 }
                 else
                     AlertDialog.Builder(requireContext())

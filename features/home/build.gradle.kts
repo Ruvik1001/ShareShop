@@ -43,6 +43,7 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.bundles.koin)
     implementation(libs.recyclerview)
+    implementation(libs.google.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.junit.ext)
     androidTestImplementation(libs.espresso.test)

@@ -34,4 +34,5 @@ interface ShareRepository {
     suspend fun authInRTDB(user: User, callback: (Boolean, User?)->Unit)
     suspend fun registerInRTDB(user: User, callback: (Boolean)->Unit)
     suspend fun updateName(userToken: String, name: String, callback: (Boolean) -> Unit)
+
 }

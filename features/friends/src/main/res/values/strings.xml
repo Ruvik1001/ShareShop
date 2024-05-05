@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="editSearchFriendText">Введите идетификатор</string>
+    <string name="friendAdded">Друг добавлен!</string>
+    <string name="badTryResult">Не удалось выполнить операцию</string>
+    <string name="friendRemoved">Друг удалён</string>
+    <string name="addFriendTitle">Добавление друга</string>
+    <string name="addFriendHint">Введите идентификатор</string>
+    <string name="create">Подтвердить</string>
+    <string name="createFRequestError">Некорректный токен</string>
+    <string name="close">Отменить</string>
+    <string name="suucessRequestCreate">Запрос создан</string>
+    <string name="failureRequestCreate">Не удалось создать запрос</string>
 </resources>

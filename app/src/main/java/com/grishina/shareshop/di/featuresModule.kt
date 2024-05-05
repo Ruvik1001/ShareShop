@@ -30,9 +30,11 @@ val featuresModule = module {
     viewModel<HomeViewModel> {
         HomeViewModel(
             homeRouter = get(),
+            getUserUseCase = get(),
             loadProductListsUseCase = get(),
             deleteProductListUseCase = get(),
-            updateProductListNameUseCase = get()
+            createProductListUseCase = get(),
+            updateProductListNameUseCase = get(),
         )
     }
 
@@ -58,6 +60,8 @@ val featuresModule = module {
         ProfileViewModel(
             profileRouter = get(),
             signOutUseCase = get(),
+            getUserUseCase = get(),
+            authInRTDBUseCase = get(),
             updateNameUseCase = get(),
             setNewPasswordUseCase = get(),
         )

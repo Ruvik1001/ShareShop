@@ -1,5 +1,6 @@
 package com.grishina.reset_password
 
+import android.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import com.grishina.core.alertCheckConnection
+import com.grishina.core.alertValidateAnyFiled
+import com.grishina.core.validateMailPattern
 import org.koin.android.ext.android.inject
 
 class ResetPasswordFragment : Fragment() {
@@ -26,6 +30,34 @@ class ResetPasswordFragment : Fragment() {
 
         etLogin = view.findViewById(R.id.etLogin)
         btnResetPassword = view.findViewById(R.id.btnResetPassword)
+
+        btnResetPassword.setOnClickListener {
+            val login = etLogin.text.toString()
+
+            if (!alertCheckConnection(requireContext())) return@setOnClickListener
+            if (!alertValidateAnyFiled(
+                context = requireContext(),
+                value = login,
+                reflectFunction = ::validateMailPattern,
+                badReflectString = getString(R.string.badEmail)
+            )) return@setOnClickListener
+
+            viewModel.resetPassword(login) {
+                if (!it) {
+                    AlertDialog.Builder(requireContext())
+                        .setTitle(getString(R.string.resetErrorTitle))
+                        .setMessage(getString(R.string.resetErrorMessage))
+                        .setPositiveButton(R.string.OK) { _, _ -> }
+                        .create().show()
+                } else {
+                    AlertDialog.Builder(requireContext())
+                        .setTitle(getString(R.string.resetSuccessTitle))
+                        .setMessage(getString(R.string.resetSuccessMessage))
+                        .setPositiveButton(R.string.OK) { _, _ -> }
+                        .create().show()
+                }
+            }
+        }
 
         return view
     }

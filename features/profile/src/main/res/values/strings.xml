@@ -4,4 +4,23 @@
     <string name="lightModeButtonText">Светлая</string>
     <string name="darkModeButtonText">Тёмная</string>
     <string name="changeUserBtnText">Сменить пользователя</string>
+    <string name="data_copy_successful">Данные успешно скопированы в буфер</string>
+    <string name="editNameTitle">Изменить имя</string>
+    <string name="newNameHint">Новое имя</string>
+    <string name="confirmText">Подтвердить</string>
+    <string name="dismissText">Отменить</string>
+    <string name="wrongNameText">Неверный формат имени. Минимум 2 символа!</string>
+    <string name="changeNameErrorTitle">Ошибка смены имени</string>
+    <string name="changeNameErrorText">Не удалось обновить имя</string>
+    <string name="OK">Ок</string>
+    <string name="networkErrorTitle">Ошибка подключения</string>
+    <string name="reloadText">Перезагрузить</string>
+    <string name="successChangeName">Имя успешно сменено!</string>
+    <string name="copyLableID">ID</string>
+    <string name="editPasswordTitle">Изменение пароля</string>
+    <string name="newPasswordHint">Введите новый пароль</string>
+    <string name="wrongPasswordText">Пароль не может быть короче 6 символов!</string>
+    <string name="successChangePassword">Пароль успешно сменён</string>
+    <string name="changePasswordErrorTitle">Не удалось сменить пароль</string>
+    <string name="changePasswordErrorText">Проверьте правильность введённого пароля или повторите позднее</string>
 </resources>

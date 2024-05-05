@@ -33,10 +33,9 @@ class AuthRepositoryImpl: AuthRepository {
 
     override suspend fun setNewPassword(password: String): Task<AuthResult> {
         val login = firebaseAuth.currentUser!!.email!!
-        val auth = FirebaseAuth.getInstance()
-        val deleteTask = firebaseAuth.currentUser?.delete()
-        deleteTask?.await()
-        return auth.createUserWithEmailAndPassword(login, password)
+        val deleteTask = firebaseAuth.currentUser!!.delete()
+        deleteTask.await()
+        return firebaseAuth.createUserWithEmailAndPassword(login, password)
     }
 
     override fun signOut() {

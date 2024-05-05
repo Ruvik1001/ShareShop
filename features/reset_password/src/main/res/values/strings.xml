@@ -2,4 +2,10 @@
 <resources>
     <string name="emailHint">Введите email</string>
     <string name="btnReset">Восстановить</string>
+    <string name="badEmail">Неверный формат логина</string>
+    <string name="resetErrorTitle">Ошибка восстановления</string>
+    <string name="resetErrorMessage">Данный пользователь не зарегистрирован.</string>
+    <string name="OK">Ок</string>
+    <string name="resetSuccessTitle">Успешный сброс пароля</string>
+    <string name="resetSuccessMessage">Проверьте почту на наличие ссылок для восстановления.</string>
 </resources>

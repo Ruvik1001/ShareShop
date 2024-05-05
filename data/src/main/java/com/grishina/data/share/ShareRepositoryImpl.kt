@@ -446,6 +446,7 @@ class ShareRepositoryImpl: ShareRepository {
                             names.add(user.userToken to user.name)
                         }
                 }
+                callback(true, names)
             }
 
             override fun onCancelled(databaseError: DatabaseError) {

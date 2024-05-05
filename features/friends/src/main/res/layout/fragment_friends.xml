@@ -23,8 +23,7 @@
             android:paddingHorizontal="@dimen/small_dp"
             android:layout_marginTop="@dimen/small_dp"
             android:hint="@string/editSearchFriendText"
-            android:inputType="number"
-            android:maxLength="16"/>
+            android:maxLength="64"/>
 
         <ImageButton
             android:id="@+id/ibClear"
@@ -88,4 +87,19 @@
             android:focusable="true" />
 
     </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/ibAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/navigationPanel"
+        android:layout_marginBottom="-20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="@dimen/medium_dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/add_ico_black" />
 </RelativeLayout>

@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="editSearchItemText">Введите название</string>
+    <string name="accessErrorTitle">Нарушение доступа</string>
+    <string name="accessErrorText">Может управлять только владелец!</string>
+    <string name="changeListNameTitle">Изменение названия листа</string>
+    <string name="changeListNameHint">Новое название</string>
+    <string name="confirm">Принять</string>
+    <string name="successNameChange">Удалось обновить название</string>
+    <string name="badNameChange">Проблемы с обновлением</string>
+    <string name="close">Отменить</string>
+    <string name="addListTitle">Добавить список</string>
+    <string name="addListText">Введите наимнование</string>
+    <string name="create">Создать</string>
+    <string name="createListError">Не удалось создать лист.</string>
 </resources>

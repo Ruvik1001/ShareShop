@@ -3,6 +3,7 @@ package com.grishina.shareshop.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
+import com.grishina.core.initTheme
 import com.grishina.friends.FriendsRouter
 import com.grishina.home.HomeRouter
 import com.grishina.product_list.ProductListRouter
@@ -16,6 +17,8 @@ import com.grishina.shareshop.glue.AdapterSignInRouter
 import com.grishina.sign_in.SignInRouter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.NonCancellable.cancel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 
@@ -29,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initTheme(applicationContext)
         CoroutineScope(Dispatchers.Main).launch {
             init()
         }
@@ -42,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         (adapterProductListRouter as AdapterProductListRouter).switchNavController(navController)
         (adapterProfileRouter as AdapterProfileRouter).switchNavController(navController)
         (adapterSignInRouter as AdapterSignInRouter).switchNavController(navController)
+
     }
 
     override fun onBackPressed() {
