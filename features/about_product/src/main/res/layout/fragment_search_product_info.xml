@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".presentation.SearchProductInfoFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+
+        <LinearLayout
+            android:id="@+id/titleContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/small_dp"
+            android:background="@color/blue">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/textViewFindTestTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_find_product"
+                style="@style/LargeTextCenter"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@color/blue"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/factContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleContainer"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="60">
+
+                <EditText
+                    android:id="@+id/etSearchText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/small_dp"
+                    android:layout_marginTop="@dimen/small_dp"
+                    android:hint="@string/search_hint"
+                    android:inputType="text" />
+
+
+            </LinearLayout>
+
+
+
+            <ImageView
+                android:id="@+id/ivClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/large_dp"
+                android:layout_weight="20"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/clear_ico_black"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/ibSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:src="@drawable/search_ico_black"
+                android:layout_margin="@dimen/small_dp"
+                android:layout_marginTop="@dimen/small_dp"
+                />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecipes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/factContainer"
+            android:layout_marginHorizontal="@dimen/small_dp"
+            />
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+
+        <LinearLayout
+            android:id="@+id/llHistory"
+            android:visibility="gone"
+            android:layout_marginHorizontal="@dimen/small_dp"
+            android:layout_below="@id/factContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/invisible"
+                android:layout_marginHorizontal="@dimen/small_dp"
+                android:layout_weight="90"
+                />
+
+            <ImageView
+                android:id="@+id/ivClearHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/trash_ico_black"
+                android:layout_weight="5"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

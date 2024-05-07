@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_hint">Введите интересующий рецепт</string>
+    <string name="title_find_product">Поиск рецептов</string>
+    <string name="title_find_error">Ошибка</string>
+    <string name="server_error">Сервер временно не доступен</string>
+    <string name="nothing_finded">Ничего не найдено</string>
+</resources>

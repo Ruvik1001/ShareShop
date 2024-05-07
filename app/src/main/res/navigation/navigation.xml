@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_productListFragment_to_productListSettingsFragment"
             app:destination="@id/productListSettingsFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_searchProductInfoFragment"
+            app:destination="@id/searchProductInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/productListSettingsFragment"
@@ -86,4 +89,9 @@
         android:name="com.grishina.sign_up.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up"/>
+    <fragment
+        android:id="@+id/searchProductInfoFragment"
+        android:name="com.grishina.about_product.presentation.SearchProductInfoFragment"
+        android:label="SearchProductInfoFragment"
+        tools:layout="@layout/fragment_search_product_info"/>
 </navigation>

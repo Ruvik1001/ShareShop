@@ -25,4 +25,8 @@ class AdapterProductListRouter(
         navController?.navigate(R.id.action_productListFragment_to_productListSettingsFragment, bundle)
     }
 
+    override fun goToAboutProduct() {
+        navController?.navigate(R.id.action_productListFragment_to_searchProductInfoFragment)
+    }
+
 }

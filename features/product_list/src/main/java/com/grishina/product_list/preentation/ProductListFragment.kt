@@ -35,6 +35,7 @@ class ProductListFragment : Fragment() {
     private lateinit var rvItems: RecyclerView
     private lateinit var btnEditShared: Button
     private lateinit var ibAdd: FloatingActionButton
+    private lateinit var ivSearchRecipe: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +52,9 @@ class ProductListFragment : Fragment() {
         rvItems = view.findViewById(R.id.rvItems)
         btnEditShared = view.findViewById(R.id.btnEditShared)
         ibAdd = view.findViewById(R.id.ibAdd)
+        ivSearchRecipe = view.findViewById(R.id.ivInfoAboutFragment)
+
+        ivSearchRecipe.setOnClickListener { viewModel.lunchAboutFragment() }
 
         rvItems.layoutManager = LinearLayoutManager(requireContext())
 

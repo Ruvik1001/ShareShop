@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background"
     tools:context=".preentation.ProductListFragment">
 
@@ -33,6 +34,24 @@
             android:layout_marginTop="@dimen/medium_dp"/>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivInfoAboutFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llListNameContainer"
+        android:layout_marginTop="-20dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:layout_alignRight="@id/llListNameContainer"
+        android:layout_marginRight="@dimen/small_dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/question_ico_black"
+        app:maxImageSize="@dimen/large_dp"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvItems"

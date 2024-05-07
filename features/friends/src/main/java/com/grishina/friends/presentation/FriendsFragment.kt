@@ -113,7 +113,7 @@ class FriendsFragment : Fragment() {
                     viewModel.sendRequest(friendToken) {
                         ibClear.performClick()
                         viewModel.loadRequests()
-                        if (it) toast(getString(R.string.suucessRequestCreate))
+                        if (it) toast(getString(R.string.successRequestCreate))
                         else toast(getString(R.string.failureRequestCreate))
                     }
                 },

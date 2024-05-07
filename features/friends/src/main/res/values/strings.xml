@@ -9,6 +9,6 @@
     <string name="create">Подтвердить</string>
     <string name="createFRequestError">Некорректный токен</string>
     <string name="close">Отменить</string>
-    <string name="suucessRequestCreate">Запрос создан</string>
+    <string name="successRequestCreate">Запрос создан</string>
     <string name="failureRequestCreate">Не удалось создать запрос</string>
 </resources>

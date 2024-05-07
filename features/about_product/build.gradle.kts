@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.grishina.features"
+    namespace = "com.grishina.about_product"
     compileSdk = 34
 
     defaultConfig {
@@ -34,16 +34,17 @@ android {
 }
 
 dependencies {
-
-    api(project(path = ":features:about_product"))
-    api(project(path = ":features:friends"))
-    api(project(path = ":features:home"))
-    api(project(path = ":features:product_list"))
-    api(project(path = ":features:product_list_settings"))
-    api(project(path = ":features:profile"))
-    api(project(path = ":features:reset_password"))
-    api(project(path = ":features:sign-in"))
-    api(project(path = ":features:sign-up"))
+    implementation(project(path = ":core"))
+    implementation(project(path = ":data"))
+    implementation(project(path = ":domain"))
+    implementation(libs.legacy.support.v4)
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.bundles.koin)
+    implementation(libs.bundles.retrofit2)
+    implementation("org.jsoup:jsoup:1.14.3")
+    implementation(libs.constraintlayout)
+    implementation(libs.recyclerview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.junit.ext)
     androidTestImplementation(libs.espresso.test)

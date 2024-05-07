@@ -80,6 +80,10 @@ class ProductListViewModel(
         productListRouter.goToProductListSettings(mList.value!!.listToken)
     }
 
+    fun lunchAboutFragment() {
+        productListRouter.goToAboutProduct()
+    }
+
     fun updateProductListName(newName: String, callback: (Boolean) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
             updateProductListNameUseCase.execute(mList.value!!.listToken, newName) {

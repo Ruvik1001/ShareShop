@@ -1,5 +1,6 @@
 package com.grishina.shareshop.di
 
+import com.grishina.about_product.presentation.SearchProductInfoViewModel
 import com.grishina.friends.presentation.FriendsViewModel
 import com.grishina.home.presentation.HomeViewModel
 import com.grishina.product_list.preentation.ProductListViewModel
@@ -8,11 +9,16 @@ import com.grishina.profile.presentation.ProfileViewModel
 import com.grishina.reset_password.ResetPasswordViewModel
 import com.grishina.sign_in.presentation.SignInViewModel
 import com.grishina.sign_up.SignUpViewModel
-import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val featuresModule = module {
+
+    viewModel<SearchProductInfoViewModel> {
+        SearchProductInfoViewModel(
+
+        )
+    }
 
     viewModel<FriendsViewModel> {
         FriendsViewModel(
