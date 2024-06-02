@@ -280,8 +280,11 @@ class ShareRepositoryImpl: ShareRepository {
                     val request = requests.getValue(FriendRequest::class.java)
                     if (request != null)
                         if (request.fromToken == fromToken && request.toToken == toToken ||
-                            request.fromToken == toToken && request.toToken == fromToken) {
-                            if (request.status != FriendRequestStatus.WAITING) {
+                            request.fromToken == toToken && request.toToken == fromToken)
+                        {
+                            if (request.status != FriendRequestStatus.WAITING &&
+                                request.status != FriendRequestStatus.APPROVED)
+                            {
                                 request.status = FriendRequestStatus.WAITING
                                 requests.ref.setValue(request) { error, _ ->
                                     if (error != null) {
@@ -291,7 +294,9 @@ class ShareRepositoryImpl: ShareRepository {
                                         successCallback(true)
                                     }
                                 }
-                            } else if (request.toToken == fromToken) {
+                            } else if (request.toToken == fromToken &&
+                                request.status == FriendRequestStatus.WAITING)
+                            {
                                 request.status = FriendRequestStatus.APPROVED
                                 requests.ref.setValue(request) { error, _ ->
                                     if (error != null) {

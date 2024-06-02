@@ -1,5 +1,6 @@
 package com.grishina.profile.presentation
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.grishina.domain.auth.usecase.GetUserUseCase
 import com.grishina.domain.auth.usecase.SetNewPasswordUseCase
@@ -45,7 +46,11 @@ class ProfileViewModel(
             CoroutineScope(Dispatchers.IO).launch {
                 updateNameUseCase.execute(it!!.userToken, newName) {
                     CoroutineScope(Dispatchers.Main).launch {
-                        callback(it)
+                        try {
+                            callback(it)
+                        } catch (e: Exception) {
+                            Log.e("ProfileViewModel:updateName", e.message.toString())
+                        }
                     }
                 }
             }

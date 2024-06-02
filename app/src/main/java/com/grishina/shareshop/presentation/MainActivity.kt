@@ -17,8 +17,6 @@ import com.grishina.shareshop.glue.AdapterSignInRouter
 import com.grishina.sign_in.SignInRouter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.NonCancellable.cancel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 

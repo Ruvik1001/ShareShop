@@ -34,6 +34,7 @@
 
     <Button
         android:id="@+id/btnAddShare"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         style="@style/MediumButtonCenter"
         android:layout_margin="@dimen/small_dp"

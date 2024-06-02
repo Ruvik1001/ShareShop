@@ -1,0 +1,90 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'package "com.grishina.domain.data" {
+'ProductList o.. ListItem
+'ProductList ..> User
+'class ProductList{
+'    +var ownerToken: String = "",
+'    +var title: String = "",
+'    +var items: List<ListItem> = listOf,
+'    +var sharedWith: List<String> = listOf,
+'    +var creationDate: Long = System.currentTimeMillis,
+'    +var listToken: String = ""
+'    +fun init()
+'    -fun generateToken(seed: String, salt: String): String
+'}
+'
+'
+'class User{
+'    +var login: String = "",
+'    +var password: String = "",
+'    +var name: String = "",
+'    +var userToken: String = "",
+'    +fun init()
+'    -fun generateToken(login: String): String
+'}
+'
+'
+'enum ItemStatus {
+'    ACTIVE,
+'    BOUGHT
+'}
+'
+'ListItem ..>ItemStatus
+'class ListItem {
+'    +var name: String = "",
+'    +var status: ItemStatus = ItemStatus.ACTIVE
+'
+'}
+'}
+
+package "com.grishina.domain.auth" {
+interface AuthRepository {
+    +suspend fun fetchSignInMethodsForEmail(email: String): SignInMethodQueryResult
+    +suspend fun signIn(user: User): Task<AuthResult>
+    +suspend fun signUp(user: User): Task<AuthResult>
+    +suspend fun resetPassword(email: String): Task<Void>
+    +suspend fun setNewPassword(password: String): Task<AuthResult>
+    +fun signOut()
+    +fun getUser(): FirebaseUser?
+}
+}
+package "com.grishina.domain.share" {
+'interface ShareRepository {
+'    // Owner action
+'    +suspend fun createProductList(productList: ProductList, successCallback: (Boolean)->Unit)
+'    +suspend fun updateProductListName(listToken: String, newName: String, successCallback: (Boolean) -> Unit)
+'    +suspend fun deleteProductList(listToken: String, successCallback: (Boolean)->Unit)
+'    +suspend fun addFriendToList(listToken: String, friendToken: String, successCallback: (Boolean)->Unit)
+'    +suspend fun removeFriendFromList(listToken: String, friendToken: String, successCallback: (Boolean)->Unit)
+'    // Owner and friends action
+'    +suspend fun updateProductListItems(listToken: String, items: List<ListItem>, successCallback: (Boolean)->Unit)
+'    +suspend fun updateProductListItemStatus(listToken: String, itemIndex: Int, status: ItemStatus, successCallback: (Boolean)->Unit)
+'    // All users
+'    +suspend fun sendFriendRequest(fromToken: String, toToken: String, successCallback: (Boolean)->Unit)
+'    +suspend fun acceptFriendRequest(request: FriendRequest, successCallback: (Boolean)->Unit)
+'    +suspend fun refuseFriendRequest(request: FriendRequest, successCallback: (Boolean)->Unit)
+'    +suspend fun removeFriend(request: FriendRequest, successCallback: (Boolean)->Unit)
+'    // Current user
+'    +suspend fun loadFriendsName(friendsTokens: List<String>, callback: (Boolean, List<Pair<String, String>>?)->Unit) // Names
+'    +suspend fun loadFriendRequests(myToken: String, callback: (Boolean, List<FriendRequest>?)->Unit)
+'    +suspend fun loadProductLists(myToken: String, callback: (Boolean, List<ProductList>?)->Unit)
+'    +suspend fun loadProductList(listToken: String, callback: (ProductList?) -> Unit)
+'    +suspend fun observeListChanges(listToken: String, callback: (ProductList?) -> Unit)
+'    +suspend fun authInRTDB(user: User, callback: (Boolean, User?)->Unit)
+'    +suspend fun registerInRTDB(user: User, callback: (Boolean)->Unit)
+'    +suspend fun updateName(userToken: String, name: String, callback: (Boolean) -> Unit)
+'    +suspend fun getUserByToken(userToken: String, callback: (User?) -> Unit)
+'
+'}
+}
+package "com.grishina.data.auth" {
+AuthRepository <|.. AuthRepositoryImpl
+class AuthRepositoryImpl { }
+}
+package "com.grishina.data.share" {
+'ShareRepository <|.. ShareRepositoryImpl
+'class ShareRepositoryImpl {}
+}
+@enduml

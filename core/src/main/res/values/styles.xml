@@ -89,5 +89,4 @@
     <style name="SmallEditTextCenter" parent="SmallEditText">
         <item name="android:gravity">center</item>
     </style>
-
 </resources>

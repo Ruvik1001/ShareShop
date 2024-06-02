@@ -62,7 +62,7 @@ fun <T> alertValidateAnyFiled(
     val resultOfValidate = reflectFunction(value)
     if (!resultOfValidate) {
         val dialog = AlertDialog.Builder(context)
-            .setTitle("Ошибка")
+            .setTitle(R.string.networkErrorTitle)
             .setMessage(badReflectString)
             .setPositiveButton(positiveButtonText) { _, _ -> positiveButtonAction() }
         if (negativeButtonText != null)
@@ -86,7 +86,7 @@ fun <T> alertValidateAnyFiled(
     val resultOfValidate = reflectFunction(context, value)
     if (!resultOfValidate) {
         val dialog = AlertDialog.Builder(context)
-            .setTitle("Ошибка")
+            .setTitle(R.string.networkErrorTitle)
             .setMessage(badReflectString)
             .setPositiveButton(positiveButtonText) { _, _ -> positiveButtonAction() }
         if (negativeButtonText != null)

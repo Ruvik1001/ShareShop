@@ -15,7 +15,7 @@ data class FriendRequest(
     var requestToken: String = ""
 ) {
     init {
-        requestToken = generateToken(fromToken)
+        requestToken = generateToken("$fromToken$toToken")
     }
 
     private fun generateToken(seed: String): String {

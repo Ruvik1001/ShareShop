@@ -54,7 +54,7 @@ class ProductListSettingsFragment : Fragment() {
                     pairsOfTokenAndName.add(Pair(token, name!!.name))
 
                     val itOwner = productList.ownerToken == viewModel.getUser().userToken
-                    if (!itOwner) btnAddShare.visibility = View.GONE
+                    if (itOwner) btnAddShare.visibility = View.VISIBLE
 
                     rvItems.adapter = ListSettingsAdapter(
                         tokensAndNames = pairsOfTokenAndName,
